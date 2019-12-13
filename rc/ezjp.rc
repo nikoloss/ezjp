@@ -1,0 +1,12 @@
+export PATH="$PATH:$EZJP_HOME/bin"
+
+words=""
+for var in `ls $EZJP_HOME/h`; do
+    words=`echo "$words $var"`
+done
+
+if [[ ${SHELL##*/} = "bash" ]]; then
+    complete -W $words ezjp
+elif [[ ${SHELL##*/} = "zsh" ]]; then
+    compdef "_values '' $words" ezjp
+fi
