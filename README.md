@@ -19,12 +19,12 @@ $/>ezjp mydev
 #### 4.自动提示/Auto completion
 ```bash
 $/>ezjp [TAB]
-m13 m14_2 armdev
+x86dev armdev x86pub armpub
 ```
 使用tab键
 
 #### 5.ssh配置/ssh configurations
-在$EZJP_HOME/h下面，代表了不同环境的登录，以m13为例
+在$EZJP_HOME/h下面，代表了不同环境的登录
 ```
 #host		port	user		passwd
 10.10.10.10	36000	root		ihatecpp    #跳板机
