@@ -36,7 +36,6 @@ x86dev armdev x86pub armpub
 #### 6. 卸载/Uninstall
 如果你使用zsh，则编辑~/.zshrc。如果使用的bash则编辑~/.bash_profile。把其中关于EZJP的加载语句删除
 ```
-export EZJP_HOME="/Users/luigiluo/.oh-my-jp"
-. /Users/luigiluo/.oh-my-jp/rc/ezjp.rc
+export EZJP_HOME="/Users/luigiluo/.oh-my-jp" &&. /Users/luigiluo/.oh-my-jp/rc/ezjp.rc
 ```
 然后删除目录即可完全卸载
