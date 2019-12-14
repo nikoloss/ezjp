@@ -22,6 +22,4 @@ function _update_ezjp() {
     cd -
 }
 
-function _gen_expect_script() {
-    
-}
+
