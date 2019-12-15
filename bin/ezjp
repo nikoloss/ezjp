@@ -27,7 +27,7 @@ expect {
   "*password:*" {
     send "$pass\r"
   }
-  "(yes/no)*" {
+  "*yes/no*" {
     send "yes\r"
     expect "password:*"
     send "$pass\r"
