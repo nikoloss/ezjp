@@ -39,7 +39,7 @@ EOF
 
 main() {
     if [[ $# != 1 ]]; then
-	echo "Usage: $0 <tce:env>"
+	echo "Usage: $0 <env>"
 	exit 127
     fi
     loadconf $1
