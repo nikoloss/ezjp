@@ -1,50 +1,16 @@
 #!/bin/bash
-declare -i i=0
-
 . $EZJP_HOME/rc/ezlib.sh  # load ezlib
-_update_ezjp
-
-printf "spawn ">$EZJP_HOME/tmp/a.ff
-loadconf() {
-    cat $EZJP_HOME/h/$1| sed 's/#.*//'|sed -n '/./p'|while read line; do
-	ssh $line
-    done
-}
-
-ssh() {
-    local host=$1
-    local port=$2
-    local user=$3
-    local pass=$4
-    local cmd="ssh $user@$host -p$port"
-    if [[ $i>0 ]]; then
-	cmd="send \"ssh $user@$host -p$port\r\""
-    fi
-    ((i++))
-    cat<<EOF>>$EZJP_HOME/tmp/a.ff
-$cmd
-expect {
-  "*password:*" {
-    send "$pass\r"
-  }
-  "*yes/no*" {
-    send "yes\r"
-    expect "password:*"
-    send "$pass\r"
-  }
-}
-expect "*$user*"
-EOF
-}
 
 main() {
     if [[ $# != 1 ]]; then
 	echo "Usage: $0 <env>"
 	exit 127
     fi
-    loadconf $1
-    cat $EZJP_HOME/tmp/a.ff|sed '$d'>$EZJP_HOME/tmp/ezexp.exp
-    echo interact>>$EZJP_HOME/tmp/ezexp.exp
+    _update_ezjp
+    _gen_expect $1
+    if [[ $? != 0 ]];then
+	return 1
+    fi
     expect $EZJP_HOME/tmp/ezexp.exp
 }
 
