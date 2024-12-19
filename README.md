@@ -1,7 +1,7 @@
 
 # EZJP - Easy Jump
 
-[English](#english) | [中文](#中文-ezjp--easy-jump)
+[English](#english) | [中文](#chinese)
 
 ## English
 
@@ -87,7 +87,7 @@ Then, delete the entire `ezjp` project directory to complete the uninstallation.
 
 ---
 
-## 中文 ezjp -- Easy Jump
+## chinese
 
 `EZJP` 是一个旨在简化多层 SSH 跳板机登录流程的工具。通过简单的命令和自动补全，你可以快速地在各种预定义环境之间跳转，无需频繁输入繁琐的 SSH 命令或密码。
 
