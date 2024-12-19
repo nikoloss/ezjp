@@ -42,12 +42,12 @@ function _gen_expect() {
         cat<<EOF>>$EZJP_HOME/tmp/a.ff
 $cmd
 expect {
-  "*password:*" {
+  "*assword:*" {
     send "$pass\r"
   }
   "*yes/no*" {
     send "yes\r"
-    expect "password:*"
+    expect "assword:*"
     send "$pass\r"
   }
 }
